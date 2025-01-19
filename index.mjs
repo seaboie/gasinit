@@ -2,45 +2,77 @@
 
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
+import inquirer from "inquirer";
 
-const currentDir = process.cwd();
-const projectFolder = path.basename(currentDir);
+// Define the templates directory
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const templatesDir = path.join(__dirname, 'templates');
 
-// Modern browser
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// Validate the templates directory
+if (!fs.existsSync(templatesDir)) {
+  console.error(`Error: Templates directory not found at ${templatesDir}`);
+  process.exit(1);
+}
 
-// Read the package-template.json file
-const templatePath = path.join(__dirname, "package-template.json");
-const packageTemplate = fs.readFileSync(templatePath, "utf8");
-
-// Placehoder project description
+// Get project details
+const projectFolder = path.basename(process.cwd());
 const projectName = projectFolder.toLowerCase().replace(/\s+/g, "-");
-const projectDescription = `A sample ${projectName} project description`;
 
-// Replace the placehoder {{projectName}} with the actual project name.
-const packageContent = packageTemplate
-  .replace(/{{projectName}}/g, projectName)
-  .replace(/{{projectDescription}}/g, projectDescription);
+// Prompt user for project description
+const promptProjectDescription = async () => {
+  const { projectDescription } = await inquirer.prompt([
+    {
+      type: "input",
+      name: "projectDescription",
+      message: "Enter a description for your project:",
+      default: `A sample ${projectName} project`,
+    },
+  ]);
+  return projectDescription;
+};
+
+const projectDescription = await promptProjectDescription();
+
+// Function to read and replace placeholders in template files
+const readTemplate = (fileName) => {
+  const templatePath = path.join(templatesDir, fileName);
+  if (!fs.existsSync(templatePath)) {
+    console.error(`Error: Template file ${fileName} does not exist.`);
+    process.exit(1);
+  }
+
+  let content = fs.readFileSync(templatePath, 'utf8');
+  return content
+    .replace(/{{projectName}}/g, projectName)
+    .replace(/{{projectDescription}}/g, projectDescription);
+};
 
 // Define the files to be generated
 const files = {
-  "README.md": `# ${projectFolder}
-
-## Description  
-This is a ${projectFolder} project.
-`,
-  ".gitignore": "node_modules\n.env",
-  "index.js": "// Entry point for the application",
-  "package.json": packageContent,
+  "README.md": readTemplate('README.md'),
+  "src/Code.ts": readTemplate('Code.ts'), // Move index.js to src/
+  "package.json": readTemplate('package.json'),
+  "LICENSE": readTemplate('LICENSE'),
+  "tsconfig.json": readTemplate('tsconfig.json'),
 };
 
-// Functions to create Files.
-Object.keys(files).forEach((fileName) => {
-  const filePath = path.join(currentDir, fileName);
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, files[fileName], "utf8");
-    console.log(`Success : creating ${fileName}`);
-  } else {
-    console.log(`${fileName} already exists`);
+// Function to create directories and files
+const createFile = (filePath, content) => {
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
+  if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, content, 'utf8');
+    console.log(`Success: Created ${filePath}`);
+  } else {
+    console.log(`${filePath} already exists`);
+  }
+};
+
+// Generate files and folders
+Object.keys(files).forEach((fileName) => {
+  const filePath = path.join(process.cwd(), fileName);
+  createFile(filePath, files[fileName]);
 });

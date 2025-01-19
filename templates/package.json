@@ -1,18 +1,15 @@
 {
-  "name": "gasinit",
-  "version": "1.0.33",
-  "main": "index.mjs",
+  "name": "{{projectName}}",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "gasinit": "index.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "inquirer": "^12.3.2"
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.91"
   }
 }

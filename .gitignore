@@ -6,7 +6,6 @@ yarn-error.log
 # JavaScript/TypeScript
 *.js.map
 *.ts
-!.gitignore
 
 # IDE and Editor
 .vscode/
