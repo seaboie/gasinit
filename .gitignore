@@ -1,0 +1,25 @@
+# Node.js and npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# JavaScript/TypeScript
+*.js.map
+*.ts
+!.gitignore
+
+# IDE and Editor
+.vscode/
+.idea/
+.editorconfig
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Build and dist
+build/
+dist/
