@@ -16,3 +16,15 @@ gasinit
 ```  
 
 ---   
+
+## File Structure  
+
+```plaintext
+project
+├── ./src
+│   └── Code.ts
+├── LICENSE
+├── package.json
+├── README.md
+└── tsconfig.json
+```  
