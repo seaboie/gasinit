@@ -8,10 +8,17 @@
   "bin": {
     "gasinit": "index.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "Google Apps Script",
+    "clasp",
+    "clasp run",
+    "clasp with typescript",
+    "Google Sheets",
+    "Google Form"
+  ],
+  "author": "Kritbovorn Taweeyossak",
+  "license": "MIT",
+  "description": "Generate files and folder for google-apps-script project use TypeScript",
   "dependencies": {
     "inquirer": "^12.3.2"
   }
