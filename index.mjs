@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import fs from "fs";
+import fs, { read } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import inquirer from "inquirer";
@@ -52,6 +52,11 @@ const readTemplate = (fileName) => {
 const files = {
   "README.md": readTemplate('README.md'),
   "src/Code.ts": readTemplate('Code.ts'), // Move index.js to src/
+  "src/config/Config.ts": readTemplate('Config.ts'),
+  "src/helpers/DateHelper.ts": readTemplate('DateHelper.ts'),
+  "src/html/index.html": readTemplate('index.html'),
+  "src/js/script.js.html": readTemplate('script.js.html'),
+  "src/css/style.css.html": readTemplate('style.css.html'),
   "package.json": readTemplate('package.json'),
   "LICENSE": readTemplate('LICENSE'),
   "tsconfig.json": readTemplate('tsconfig.json'),

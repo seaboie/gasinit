@@ -22,7 +22,10 @@ gasinit
 ```  
 type description for your project  and `Enter`  
 
-
+> ### 🛠️ 🛠️ 🛠️ Install : dependencies listed in the package.json file.  
+```bash
+npm install
+```  
 
 ---   
 
@@ -31,9 +34,13 @@ type description for your project  and `Enter`
 ```plaintext
 project/
 ├── ./src
+│   ├── ./config
+│   │   └── Config.ts
+│   ├── ./helpers
+│   │   └── DateHelper.ts
 │   └── Code.ts
-├── .claspignore
 ├── LICENSE
+├── package-lock.json
 ├── package.json
 ├── README.md
 └── tsconfig.json
