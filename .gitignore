@@ -1,24 +1,52 @@
 # Node.js and npm
 node_modules/
 npm-debug.log
-yarn-error.log
+package-lock.json
+yarn.lock
 
-# JavaScript/TypeScript
-*.js.map
-*.ts
+# TypeScript
+dist/
+build/
+*.tsbuildinfo
 
-# IDE and Editor
+# Google Apps Script
+.gas/
+.clasp.json
+.clasprc.json
+creds.json
+
+# JavaScript
+*.log
+*.min.js
+*.min.js.map
+
+# IDE and Editor files
 .vscode/
 .idea/
-.editorconfig
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# macOS
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# macOS files
 .DS_Store
 
-# Logs
-logs/
-*.log
+# Windows files
+Thumbs.db
 
-# Build and dist
-build/
-dist/
+# Logs and databases
+*.log
+*.sqlite
+
+# Build and cache directories
+.cache/
+.temp/
+.out/

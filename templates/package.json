@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "logs": "clasp logs --simplified --watch | sed -E 's/^(DEBUG).*\"message\":\"([^\"]+)\".*/\\x1b[36m\\1\\x1b[0m - \\2/;s/^(INFO).*\"message\":\"([^\"]+)\".*/\\x1b[32m\\1\\x1b[0m - \\2/;s/^(WARN).*\"message\":\"([^\"]+)\".*/\\x1b[33m\\1\\x1b[0m - \\2/;s/^(ERROR).*\"message\":\"([^\"]+)\".*/\\x1b[31m\\1\\x1b[0m - \\2/'"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "@types/google-apps-script": "^1.0.91"

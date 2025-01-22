@@ -1,6 +1,6 @@
 {
   "name": "gasinit",
-  "version": "1.0.48",
+  "version": "1.0.50",
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
