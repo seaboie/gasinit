@@ -46,3 +46,62 @@ project/
 └── tsconfig.json
 ```  
 
+## Create `.gitignore`  
+```gitignore
+# Node.js and npm
+node_modules/
+npm-debug.log
+package-lock.json
+yarn.lock
+
+# TypeScript
+dist/
+build/
+*.tsbuildinfo
+
+# Google Apps Script
+.gas/
+**/appsscript.json
+.clasp.json
+.clasprc.json
+creds.json
+
+# JavaScript
+*.log
+*.min.js
+*.min.js.map
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Build and cache directories
+.cache/
+.temp/
+.out/
+
+```  
+
+
