@@ -1,6 +1,6 @@
 {
   "name": "gasinit",
-  "version": "1.0.54",
+  "version": "1.0.56",
   "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,5 +21,8 @@
   "description": "Generate files and folder for google-apps-script project use TypeScript",
   "dependencies": {
     "inquirer": "^12.3.2"
+  },
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.91"
   }
 }

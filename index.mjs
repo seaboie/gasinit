@@ -57,6 +57,7 @@ const files = {
   "src/html/index.html": readTemplate('index.html'),
   "src/js/script.js.html": readTemplate('script.js.html'),
   "src/css/style.css.html": readTemplate('style.css.html'),
+  "src/utils/Utils.ts": readTemplate('Utils.ts'),
   "package.json": readTemplate('package.json'),
   "LICENSE": readTemplate('LICENSE'),
   "tsconfig.json": readTemplate('tsconfig.json'),
