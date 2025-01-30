@@ -64,7 +64,8 @@ const files = {
   "package.json": readTemplate('package.json'),
   "LICENSE": readTemplate('LICENSE'),
   "tsconfig.json": readTemplate('tsconfig.json'),
-  ".claspignore": readTemplate('.claspignore')
+  ".claspignore": readTemplate('.claspignore'),
+  "type.ts": readTemplate('type.ts')
 };
 
 // Function to create directories and files
