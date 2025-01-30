@@ -59,6 +59,8 @@ const files = {
   "src/css/style.css.html": readTemplate('style.css.html'),
   "src/utils/Utils.ts": readTemplate('Utils.ts'),
   "src/services/spreadsheet/SheetServices.ts": readTemplate('SheetServices.ts'),
+  "src/services/menu/CustomMenuUi.ts": readTemplate('CustomMenuUi.ts'),
+  "src/services/menu/menuData.ts": readTemplate('menuData.ts'),
   "package.json": readTemplate('package.json'),
   "LICENSE": readTemplate('LICENSE'),
   "tsconfig.json": readTemplate('tsconfig.json'),
