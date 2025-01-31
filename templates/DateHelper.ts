@@ -1,7 +1,7 @@
 // https://gist.github.com/seaboie/a0143062e2dc7e87f3d39f86ec3aff85#file-formatdatetime-md
 
-function formatThaiDateOrTime(date, isDisplayDate = true, isFullWeek = true, isFullMonth = true, isFullYear = true) {
-    const options = isDisplayDate
+function formatThaiDateOrTime(date: Date, isDisplayDate: boolean = true, isFullWeek: boolean = true, isFullMonth: boolean = true, isFullYear: boolean = true): string {
+    const options: Intl.DateTimeFormatOptions = isDisplayDate
         ? {
             timeZone: "Asia/Bangkok",
             year: isFullYear ? "numeric" : "2-digit",
@@ -23,8 +23,8 @@ function formatThaiDateOrTime(date, isDisplayDate = true, isFullWeek = true, isF
     return formattedThaiDateOrTime;
 }
 
-function formatThaiDateTime(date) {
-    const options = {
+function formatThaiDateTime(date: Date): string {
+    const options: Intl.DateTimeFormatOptions = {
       timeZone: "Asia/Bangkok",
       year: "numeric",
       month: "long",
