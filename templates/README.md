@@ -80,3 +80,8 @@ npm run logs
 > filtered only `message` key  
 ---   
 
+## Function  
+
+> [Utils.generateHtmlFromFile()](https://gist.github.com/seaboie/4f267cf616fbc3ef3d6ae4e625edcb93#file-utils-ts)  
+
+

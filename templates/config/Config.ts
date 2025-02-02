@@ -3,6 +3,7 @@ const CONFIG = {
     "https://raw.githubusercontent.com/seaboie/images/main/images/logo/logoTransparent.png",
   SET_TITLE: "",
   ERROR: {
+    ERROR_SET_TITLE_LOADING_HTML_PAGE: "เกิดปัญหาในการ Loading...",
     ERROR_NOT_FOUND: "",
   },
   EMAIL: {
@@ -22,6 +23,12 @@ const CONFIG = {
     LINE_GROUP_ID: "",
   },
 };
+
+
+// Function to include other HTML files
+function include(filename: string) {
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
+}
 
 // Basic Function
 
@@ -56,5 +63,19 @@ function getFormId(): string {
   } catch (error) {
     Logger.log(`Error getting Form ID: ${error.message}`);
     throw error;
+  }
+}
+
+function logs(message: any) {
+  try {
+    Logger.log(message);
+  } catch (e) {
+    Logger.log(`🔥 🔥 🔥 🔥 🔥 Oops !!! : ${e.message}`);
+  }
+  
+  try {
+    console.log(message);
+  } catch (e) {
+    console.log(`🔥 🔥 🔥 🔥 🔥 Oops !!! : ${e.message}`);
   }
 }

@@ -52,20 +52,22 @@ const readTemplate = (fileName) => {
 const files = {
   "README.md": readTemplate('README.md'),
   "src/Code.ts": readTemplate('Code.ts'), // Move index.js to src/
-  "src/config/Config.ts": readTemplate('Config.ts'),
-  "src/helpers/DateHelper.ts": readTemplate('DateHelper.ts'),
-  "src/html/index.html": readTemplate('index.html'),
-  "src/js/script.js.html": readTemplate('script.js.html'),
-  "src/css/style.css.html": readTemplate('style.css.html'),
-  "src/utils/Utils.ts": readTemplate('Utils.ts'),
-  "src/services/spreadsheet/SheetServices.ts": readTemplate('SheetServices.ts'),
-  "src/services/menu/CustomMenuUi.ts": readTemplate('CustomMenuUi.ts'),
-  "src/services/menu/menuData.ts": readTemplate('menuData.ts'),
+  "src/type.ts": readTemplate('type.ts'),
+  "src/config/Config.ts": readTemplate('config/Config.ts'),
+  "src/helpers/DateHelper.ts": readTemplate('helpers/DateHelper.ts'),
+  "src/html/index.html": readTemplate('html/index.html'),
+  "src/js/script.js.html": readTemplate('js/script.js.html'),
+  "src/css/style.css.html": readTemplate('css/style.css.html'),
+  "src/utils/Utils.ts": readTemplate('utils/Utils.ts'),
+  "src/services/spreadsheet/SheetServices.ts": readTemplate('services/spreadsheet/SheetServices.ts'),
+  "src/services/menu/CustomMenuUi.ts": readTemplate('services/menu/CustomMenuUi.ts'),
+  "src/services/menu/menuData.ts": readTemplate('services/menu/menuData.ts'),
+  "src/error/html/errorLoadHtml.html": readTemplate('error/html/errorLoadHtml.html'),
   "package.json": readTemplate('package.json'),
   "LICENSE": readTemplate('LICENSE'),
   "tsconfig.json": readTemplate('tsconfig.json'),
   ".claspignore": readTemplate('.claspignore'),
-  "type.ts": readTemplate('type.ts')
+  
 };
 
 // Function to create directories and files
